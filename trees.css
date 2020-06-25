@@ -1,0 +1,496 @@
+body {
+    background-color: #2b2b2b;
+    font-family: "HammersmithOne";
+    overflow-y: hidden;
+}
+a:hover {
+    text-decoration: none;
+}
+#sizeWarning {
+    display: none;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #303a32;
+    color: #8b8b8b;
+    padding: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+h6 {
+    color: #8b8b8b;
+    font-size: 18px;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 0;
+    margin-top: 13px;
+    margin-bottom: 11px;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+h6:hover {
+    cursor: pointer;
+    color: #e0e0e0;
+}
+#navCat {
+    margin-left: 18px;
+}
+
+/* SELECT A SPECIES */
+#main {
+    background-color: #303a32;
+    width: 800px;
+    margin-top: 8vh;
+    border-radius: 12px;
+    height: 480px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left:0;
+    right:0;
+    /* reset z index to 1 and opacity 1*/
+    z-index: 1;
+    opacity: 1;
+}
+h1 {
+    color: #e0e0e0;
+    margin-top: 34px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+    margin-bottom: 12px; 
+    text-align: center;
+}
+#catInstruct {
+    color: #888888;
+    margin-bottom: 4px;
+}
+#catTitle, #catTitle2 {
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 28px;
+    margin-top: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#catTitle2 {
+    margin-top: 20px;
+}
+.option {
+    height: 60px;
+    width: 120px;
+    border-radius: 12px;
+    background-size: cover;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 55%;
+    margin: 8px;
+    margin-top: 4px;
+    margin-bottom: 13px;
+    transition: all 0.3s ease;
+    
+}
+.option:hover {
+    cursor: pointer;
+    opacity: 100%;
+    transform: translateY(1px);
+}
+#random {
+    width: 670px;
+    height: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #303030;
+    padding-top: 2px;
+    background-color: #6b756d;
+    font-size: 18px;
+    margin-top: 4px;
+    padding-top: 8px;   
+}
+#alder {background-image: url("./img/trees/alder.jpg"); background-position-y: -5px;}
+#aspen {background-image: url("./img/trees/aspen.jpg"); background-position-y: -20px;}
+#beech {background-image: url("./img/trees/beech.jpg");}
+#cherry {background-image: url("./img/trees/cherry.jpg"); background-position-y: -5px;}
+#cottonwood {background-image: url("./img/trees/cottonwood.jpg"); background-position-y: -5px;}
+#datepalm {background-image: url("./img/trees/datepalm.jpg");}
+#elm {background-image: url("./img/trees/elm.jpg"); background-position-y: -5px;}
+#fir {background-image: url("./img/trees/fir.jpg");}
+#hickory {background-image: url("./img/trees/hickory.jpg");}
+#joshuatree {background-image: url("./img/trees/joshuatree.jpg"); background-position-y: -8px;}
+#juniper {background-image: url("./img/trees/juniper.jpg"); background-position-y: -8px;}
+#loblollypine {background-image: url("./img/trees/loblollypine.jpg"); background-position-y: -25px;}
+#magnolia {background-image: url("./img/trees/magnolia.jpg"); background-position-y: -16px;}
+#maple {background-image: url("./img/trees/maple.jpg"); background-position-y: -8px;}
+#oak {background-image: url("./img/trees/oak.jpg");}
+#ponderosapine {background-image: url("./img/trees/ponderosapine.jpg"); background-position-y: -15px;}
+#spruce {background-image: url("./img/trees/spruce.jpg"); background-position-y: -6px;}
+#sycamore {background-image: url("./img/trees/sycamore.jpg"); background-position-y: -8px;}
+#walnut {background-image: url("./img/trees/walnut.jpg");}
+#whitepine {background-image: url("./img/trees/whitepine.jpg"); background-position-y: -8px;}
+
+
+/* QUIZ */
+#quiz {
+    background-color: #303a32;
+    width: 800px;
+    margin-top: 8vh;
+    border-radius: 12px;
+    height: 480px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left:0;
+    right:0;
+    /* reset z index to 0 and opacity 0*/
+    z-index: 0;
+    opacity: 0;
+}
+#background {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 10%;
+    position: absolute;
+    left:0;
+    right: 0;
+    border-radius: 12px;
+}
+#imgCol {
+    text-align: center;
+}
+#speciesImg {
+    width: 80%;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    margin: 0;
+}
+
+/* QUIZ NAV */
+.icon {
+    transition: all 0.3s ease;
+}
+.icon:hover {
+    transform: translateY(2px);
+}
+#leftIcons {
+    text-align: center;
+    width: 200px;
+    margin-left: 20px;
+}
+#rightIcons {
+    text-align: center;
+    width: 200px;
+    margin-right: 20px;
+}
+#leftIcons, #rightIcons {
+    z-index: 99;
+}
+#resetQuiz, #newRandom, #selectNew, #fieldGuide {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 32px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #303a32;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: solid 2px #252c27;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#resetQuiz {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+#fieldGuide {
+    margin-right: 30px;
+    margin-left: 10px;
+}
+h3 {
+    color: #e0e0e0;
+    font-size: 11px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 11px;
+    padding: 0;
+}
+h3:hover {
+    cursor: pointer;
+}
+
+/* I KNOW THE ANSWER */
+#dropdown {
+    width: 94%;
+    height: 35px;
+    background-color: #465749;
+    margin-bottom: 16px; 
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); 
+    border-radius: 6px;
+}
+#list {
+    display: none;
+    height: 142px;
+    overflow-y: scroll;
+    background-color: #465749;
+    width: 94%;
+    transform: translateX(-15px);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); 
+    border-radius: 6px;
+    opacity: 0;
+}
+ul {
+    margin: 6px;
+    padding: 6px;
+}
+li {
+    color: #e0e0e0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: "Roboto";
+    list-style: none;
+    text-align: left;
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+#hide {
+    color: #e0e0e0;
+}
+#hide:hover {
+    cursor: pointer;
+    color: #303a32;
+}
+li:hover {
+    cursor: pointer;
+    color: #303a32;
+    
+    
+}
+#dropdown:hover {
+    cursor: pointer;
+}
+
+h2 {
+    color: #e0e0e0;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: auto;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 6px;
+}
+  ::-webkit-scrollbar-track {
+    background: #465749;
+    border-radius: 6px;
+}
+  ::-webkit-scrollbar-thumb {
+    background: #39473b;
+    border-radius: 6px;
+}
+
+
+/* QUIZ INFO */
+#speciesDescript {
+    width: 94%;
+    background-color: #465749;
+    height: 142px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#speciesDescriptText {
+    letter-spacing: 1px;
+    font-family: "Raleway";
+    color: #e0e0e0;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#questionContainer {
+    margin-top: 15px;
+    height: 70px;
+    width: 91%;
+    background-color: #465749;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+#questionText {
+    font-family: "Raleway";
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+}
+#answerA, #answerB {
+    width: 42%;
+    margin: 12px;
+    background-color: #465749;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    height: 60px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+#answerA:hover, #answerB:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+}
+#answerAText, #answerBText {
+    font-family: "Raleway";
+    color: #e0e0e0;
+    font-size: 17px;
+    text-align: center;
+    padding: 15px;
+    margin-top: 4px;
+}
+
+/* RESULTS */
+#results {
+    background-color: #303a32;
+    width: 800px;
+    margin-top: 8vh;
+    border-radius: 12px;
+    height: 480px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left:0;
+    right:0;
+    /* reset z index to 0 and opacity 0*/
+    z-index: 0;
+    opacity: 0;
+}
+#resultsHeader {
+    width: 80%;
+    text-align: center;
+    background-color: #465749;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+h4 {
+    margin-top: 8px;
+    color: #e0e0e0;
+    font-size: 28px;
+}
+#resultsImg {
+    width: 270px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+}
+#resultsTextContainer {
+    width: 80%;
+    text-align: center;
+    background-color: #465749;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+}
+#quizResultsText {
+    margin-top: 16px;
+    color: #e0e0e0;
+    font-size: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    letter-spacing: 1px;
+}
+.resultsButtonLeft {
+    background-color: #465749;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 80px;
+    height: 80px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.resultsButtonRight {
+    background-color: #465749;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 80px;
+    height: 80px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.resultsButtonLeft:hover {
+    cursor: pointer;
+}
+.resultsButtonRight:hover {
+    cursor: pointer;
+}
+ h5 {
+    font-size: 24px;
+    margin-top: 12px;
+    color: #e0e0e0;
+}
+
+
+/* RESPONSIVE CSS */
+/* MEDIUM */
+@media only screen and (max-width: 991px) {
+h1 {
+    font-size: 22px;
+    margin-top: 34px;
+    margin-bottom: 20px;
+}
+.option {
+    height: 62px;
+    width: 110px;
+}
+
+#random {
+    margin-top: 0px;
+    width: 620px;
+}
+#speciesDescript, #list {
+    height: 122px;
+}
+#resultsHeader {
+    margin-top: 0px;
+}
+
+}
+
+/* SMALL */
+@media only screen and (max-width: 770px) {
+
+body {
+    overflow: hidden;
+}
+#sizeWarning {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    margin: 0;
+    left: 0;
+    right: 0;
+    background-color: #232b25;
+    height: 100vh;
+    width: 100vw;
+    opacity: 100%;
+}
+
+#hello {
+    margin-top: 20vh;
+}
+#warning {
+    padding-left: 100px;
+    padding-right: 100px;
+    letter-spacing: 1px;
+    min-width: 200px;
+}
+
+}

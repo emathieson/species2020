@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>DICHOTOMOUS IDENTIFICATION</title>
+
+    <!-- JQuery scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- JS scripts-->
+    <script src="./js/movement.js" defer></script>
+
+    <!--Vue Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="./js/mammalApp.js" defer></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./mammals.css" type="text/css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+      <div class="navbar">
+        <div><a href="./index.html"><h6 id="navCat">CATEGORIES</h6></a></div>
+        <div>
+            <h6>ABOUT</h6>
+            <h6>HELP</h6>
+        </div>
+      </div>
+      <div id="mammalApp">
+
+        <div id="sizeWarning">
+            <div class="row justify-content-center" id="hello">
+                <h1>Hello! :)</h1>
+            </div>
+            <div class="row justify-content-center" id="warning">
+                <h1>Please either make your browser larger or view on a mobile device to use this web app.</h1>
+            </div>
+            <div class="row justify-content-center" id="warning">
+                <h1>Thanks! -EM</h1>
+            </div>
+        </div>
+
+      <div class="container" id="main">
+          <div class="row justify-content-center">
+              <h1>MAMMAL IDENTIFICATION</h1>
+          </div>
+          <div class="row justify-content-center">
+            <p id="catInstruct">
+                Please select a mammal below:
+            </p>
+          </div>
+          
+          <div class="container" id="selectMenu">
+              <div class="row justify-content-center">
+                  <div class="option" id="armadillo" v-on:click="setM4(), resetMammal()"></div>
+                  <div class="option" id="bat" v-on:click="setM2(), resetMammal()"></div>
+                  <div class="option" id="beaver" v-on:click="setM3(), resetMammal()"></div>
+                  <div class="option" id="bighornsheep" v-on:click="setM25(), resetMammal()"></div>
+                  <div class="option" id="bison" v-on:click="setM26(), resetMammal()"></div>
+                  <div class="option" id="blackbear" v-on:click="setM11(), resetMammal()"></div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="option" id="bobcat" v-on:click="setM24(), resetMammal()"></div>
+                <div class="option" id="chipmunk" v-on:click="setM14(), resetMammal()"></div>
+                <div class="option" id="cottontail" v-on:click="setM9(), resetMammal()"></div>
+                <div class="option" id="cougar"v-on:click="setM23(), resetMammal()"></div>
+                <div class="option" id="coyote" v-on:click="setM22(), resetMammal()"></div>
+                <div class="option" id="deer" v-on:click="setM28(), resetMammal()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="elk" v-on:click="setM29(), resetMammal()"></div>
+                <div class="option" id="flyingsquirrel" v-on:click="setM1(), resetMammal()"></div>
+                <div class="option" id="fox" v-on:click="setM20(), resetMammal()"></div>
+                <div class="option" id="grizzlybear" v-on:click="setM12(), resetMammal()"></div>
+                <div class="option" id="jackrabbit" v-on:click="setM10(), resetMammal()"></div>
+                <div class="option" id="moose" v-on:click="setM27(), resetMammal()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="mouse" v-on:click="setM7(), resetMammal()"></div>
+                <div class="option" id="oppossum" v-on:click="setM6(), resetMammal()"></div>
+                <div class="option" id="otter" v-on:click="setM19(), resetMammal()"></div>
+                <div class="option" id="porcupine" v-on:click="setM16(), resetMammal()"></div>
+                <div class="option" id="raccoon" v-on:click="setM17(), resetMammal()"></div>
+                <div class="option" id="rat" v-on:click="setM8(), resetMammal()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="shrew" v-on:click="setM5(), resetMammal()"></div>
+                <div class="option" id="skunk" v-on:click="setM13(), resetMammal()"></div>
+                <div class="option" id="treesquirrel" v-on:click="setM15(), resetMammal()"></div>
+                <div class="option" id="weasel" v-on:click="setM18(), resetMammal()"></div>
+                <div class="option" id="wolf" v-on:click="setM21(), resetMammal()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="random" v-on:click="randomMammal(), vueResetMammal(), resetLi()">SURPRISE ME!</div>
+          </div>
+          </div>
+        </div>
+
+
+        <div class="container" id="quiz">
+            <div id="background" v-bind:style="{ backgroundImage: 'url(' + this.backImg + ')' }"></div>
+            <div class="row justify-content-center">
+                <div class="container" id="leftIcons">
+                    <div class="icon" id="resetQuiz" v-on:click="vueResetMammal(), resetLi()"><h3>RESET QUIZ</h3></div>
+                    <div class="icon" id="newRandom" v-on:click="vueRandomMammal(), vueResetMammal(), resetLi()"><h3>NEW RANDOM</h3></div>
+                </div>
+                <div class="col">
+                <h1>MAMMAL IDENTIFICATION</h1>
+                </div>
+                <div class="container" id="rightIcons">
+                    <div class="icon" id="selectNew" v-on:click="vueResetMammal(), resetLi()"><h3>SELECT NEW</h3></div>
+                    <div class="icon" id="fieldGuide"><h3>FIELD GUIDE</h3></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col" id="imgCol">
+                    <img :src="speciesImage" id="speciesImg">
+                </div>
+                <div class="col">
+                    <div class="row justify-content-center" id="dropdown">
+                        <h2>I KNOW THE ANSWER!</h2>
+                    </div>
+                    <div id="list" class="col">
+                        <ul>
+                            <li id="hide">- - - - - - - HIDE LIST - - - - - - -</li>
+                            <li id="li4" v-on:click="chooseLi4(), checkAnswer()">&nbsp;ARMADILLO</li>
+                            <li id="li2" v-on:click="chooseLi2(), checkAnswer()">&nbsp;BAT</li>
+                            <li id="li3" v-on:click="chooseLi3(), checkAnswer()">&nbsp;BEAVER</li>
+                            <li id="li25" v-on:click="chooseLi25(), checkAnswer()">&nbsp;BIGHORN SHEEP</li>
+                            <li id="li26" v-on:click="chooseLi26(), checkAnswer()">&nbsp;BISON</li>
+                            <li id="li11" v-on:click="chooseLi11(), checkAnswer()">&nbsp;BLACK BEAR</li>
+                            <li id="li24" v-on:click="chooseLi24(), checkAnswer()">&nbsp;BOBCAT</li>
+                            <li id="li14" v-on:click="chooseLi14(), checkAnswer()">&nbsp;CHIPMUNK</li>
+                            <li id="li9" v-on:click="chooseLi9(), checkAnswer()">&nbsp;COTTONTAIL</li>
+                            <li id="li23" v-on:click="chooseLi23(), checkAnswer()">&nbsp;COUGAR</li>
+                            <li id="li22" v-on:click="chooseLi22(), checkAnswer()">&nbsp;COYOTE</li>
+                            <li id="li28" v-on:click="chooseLi28(), checkAnswer()">&nbsp;DEER</li>
+                            <li id="li29" v-on:click="chooseLi29(), checkAnswer()">&nbsp;ELK</li>
+                            <li id="li1" v-on:click="chooseLi1(), checkAnswer()">&nbsp;FLYING SQUIRREL</li>
+                            <li id="li20" v-on:click="chooseLi20(), checkAnswer()">&nbsp;FOX</li>
+                            <li id="li12" v-on:click="chooseLi12(), checkAnswer()">&nbsp;GRIZZLY BEAR</li>
+                            <li id="li10" v-on:click="chooseLi10(), checkAnswer()">&nbsp;JACKRABBIT</li>
+                            <li id="li27" v-on:click="chooseLi27(), checkAnswer()">&nbsp;MOOSE</li>
+                            <li id="li7" v-on:click="chooseLi7(), checkAnswer()">&nbsp;MOUSE</li>
+                            <li id="li6" v-on:click="chooseLi6(), checkAnswer()">&nbsp;OPPOSSUM</li>
+                            <li id="li19" v-on:click="chooseLi19(), checkAnswer()">&nbsp;OTTER</li>
+                            <li id="li16" v-on:click="chooseLi16(), checkAnswer()">&nbsp;PORCUPINE</li>
+                            <li id="li17" v-on:click="chooseLi17(), checkAnswer()">&nbsp;RACCOON</li>
+                            <li id="li8" v-on:click="chooseLi8(), checkAnswer()">&nbsp;RAT</li>
+                            <li id="li5" v-on:click="chooseLi5(), checkAnswer()">&nbsp;SHREW</li>
+                            <li id="li13" v-on:click="chooseLi13(), checkAnswer()">&nbsp;SKUNK</li>
+                            <li id="li15" v-on:click="chooseLi15(), checkAnswer()">&nbsp;TREE SQUIRREL</li>
+                            <li id="li18" v-on:click="chooseLi18(), checkAnswer()">&nbsp;WEASEL</li>
+                            <li id="li21" v-on:click="chooseLi21(), checkAnswer()">&nbsp;WOLF</li>
+                        </ul>
+                      </div>
+                    <div class="row" id="speciesDescript">
+                        <p id="speciesDescriptText">
+                            A mammal,
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                <div class="container" id="questionContainer">
+                    <p id="questionText">
+                        {{ this.question }}
+                    </p>
+                </div>
+                <div class="row justify-content-center" id="answerRow">
+                    <div class="container" id="answerA" v-on:click="buttonA(), vueUpdateQuestion(), checkAnswer()">
+                        <p id="answerAText">{{ this.answerA }}</p>
+                    </div>
+                    <div class="container" id="answerB" v-on:click="buttonB(), vueUpdateQuestion(), checkAnswer()">
+                        <p id="answerBText">{{ this.answerB }}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="results">
+            <div id="background"></div>
+            <div class="row justify-content-center">
+                <div class="col">
+                <h1>MAMMAL IDENTIFICATION</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container" id="resultsHeader">
+                    <h4 id="quizResult">{{ quizResult }}</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonLeft">
+                            <h5 id="resultsRandom" v-on:click="vueRandomMammal(), resetLi()">NEW<br>RANDOM</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonLeft">
+                            <h5 id="resultsNew" v-on:click="vueUpdateQuestion(), vueResetMammal(), mammalMenuSelect()">SELECT<br>MAMMAL</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img :src="speciesImage" id="resultsImg">
+                </div>
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonRight">
+                            <h5 id="buttons">FIELD<br>GUIDE</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonRight">
+                            <a href="./index.html"><h5>CATEGORY SELECT</h5></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container" id="resultsTextContainer">
+                    <p id="quizResultsText"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+  </body>
+</html>

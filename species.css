@@ -1,0 +1,167 @@
+body {
+    background-color: #3F3F3F;
+    font-family: "HammersmithOne";
+}
+
+#sizeWarning {
+    display: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #272727;
+    color: #5e5e5e;
+    padding: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+h6 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 0;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+
+h6:hover {
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+#main {
+    background-color: #272727;
+    width: 800px;
+    margin-top: 8vh;
+    border-radius: 12px;
+    height: 480px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left:0;
+    right:0;
+}
+
+h1 {
+    color: #e0e0e0;
+    margin-top: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#catInstruct {
+    color: #888888;
+    margin-bottom: 25px;
+}
+
+.cat {
+    margin: 14px;
+    width: 200px;
+    height: 115px;
+    opacity: 75%;
+    transition: all 0.3s ease;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cat:hover {
+    opacity: 100%;
+    cursor: pointer;
+    transform: translateY(2px);
+}
+
+#catTitle, #catTitle2 {
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 28px;
+    margin-top: 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#catTitle2 {
+    margin-top: 20px;
+}
+
+#birds {
+    background-image: url("./img/birdsCat.png");
+    border: solid 2px #324D58;
+}
+#mammals {
+    background-image: url("./img/mammalsCat.png");
+    border: solid 2px #583832;
+}
+#herps {
+    background-image: url("./img/herpsCat.png");
+    border: solid 2px #32584F;
+}
+#grassesAndFlowers {
+    background-image: url("./img/grassCat.png");
+    border: solid 2px #583932;
+}
+#shrubs {
+    background-image: url("./img/shrubsCat.png");
+    border: solid 2px #584932;
+}
+#trees {
+    background-image: url("./img/treesCat.png");
+    border: solid 2px #405832;
+}
+
+
+/* RESPONSIVE CSS */
+/* MEDIUM */
+@media only screen and (max-width: 991px) { 
+    .cat {
+        margin: 14px;
+        margin-bottom: 25px;
+        width: 170px;
+        height: 100px;
+        opacity: 75%;
+    }
+
+    #catTitle {
+        margin-top: 30px;
+    }
+
+    #catTitle2 {
+        margin-top: 10px;
+    }
+
+}
+
+/* SMALL */
+@media only screen and (max-width: 770px) {
+
+    body {
+        overflow: hidden;
+    }
+    #sizeWarning {
+        display: block;
+        position: absolute;
+        z-index: 100;
+        margin: 0;
+        left: 0;
+        right: 0;
+        background-color: #222C30;
+        height: 100vh;
+        width: 100vw;
+        opacity: 100%;
+    }
+    
+    #hello {
+        font-size: 26px;
+        margin-top: 10vh;
+    }
+    #warning {
+        padding-left: 100px;
+        padding-right: 100px;
+        letter-spacing: 1px;
+        min-width: 200px;
+        font-size: 20px;
+    }
+    
+    }

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>DICHOTOMOUS IDENTIFICATION</title>
+
+    <!-- JQuery scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- JS scripts-->
+    <script src="./js/movement.js" defer></script>
+
+    <!--Vue Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="./js/shrubApp.js" defer></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./shrubs.css" type="text/css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+      <div class="navbar">
+        <div><a href="./index.html"><h6 id="navCat">CATEGORIES</h6></a></div>
+        <div>
+            <h6>ABOUT</h6>
+            <h6>HELP</h6>
+        </div>
+      </div>
+      <div id="shrubApp">
+
+        <div id="sizeWarning">
+            <div class="row justify-content-center" id="hello">
+                <h1>Hello! :)</h1>
+            </div>
+            <div class="row justify-content-center" id="warning">
+                <h1>Please either make your browser larger or view on a mobile device to use this web app.</h1>
+            </div>
+            <div class="row justify-content-center" id="warning">
+                <h1>Thanks! -EM</h1>
+            </div>
+        </div>
+
+      <div class="container" id="main">
+          <div class="row justify-content-center">
+              <h1>SHRUB IDENTIFICATION</h1>
+          </div>
+          <div class="row justify-content-center">
+            <p id="catInstruct">
+                Please select a shrub below:
+            </p>
+          </div>
+          
+          <div class="container" id="selectMenu">
+              <div class="row justify-content-center">
+                  <div class="option" id="bearberry" v-on:click="setS2(), resetShrub()"></div>
+                  <div class="option" id="blueberry" v-on:click="setS4(), resetShrub()"></div>
+                  <div class="option" id="cinquefoil" v-on:click="setS14(), resetShrub()"></div>
+                  <div class="option" id="currant" v-on:click="setS5(), resetShrub()"></div>
+                  <div class="option" id="dogwood" v-on:click="setS12(), resetShrub()"></div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="option" id="elderberry" v-on:click="setS3(), resetShrub()"></div>
+                <div class="option" id="lilac" v-on:click="setS8(), resetShrub()"></div>
+                <div class="option" id="oregongrape" v-on:click="setS9(), resetShrub()"></div>
+                <div class="option" id="poisonoak"v-on:click="setS16(), resetShrub()"></div>
+                <div class="option" id="prairierose" v-on:click="setS15(), resetShrub()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="pricklypear" v-on:click="setS18(), resetShrub()"></div>
+                <div class="option" id="pussywillow" v-on:click="setS7(), resetShrub()"></div>
+                <div class="option" id="rhododendron" v-on:click="setS13(), resetShrub()"></div>
+                <div class="option" id="sagebrush" v-on:click="setS17(), resetShrub()"></div>
+                <div class="option" id="saguarocactus" v-on:click="setS19(), resetShrub()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="serviceberry" v-on:click="setS6(), resetShrub()"></div>
+                <div class="option" id="spirea" v-on:click="setS10(), resetShrub()"></div>
+                <div class="option" id="viburnum" v-on:click="setS11(), resetShrub()"></div>
+                <div class="option" id="winterberry" v-on:click="setS1(), resetShrub()"></div>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="random" v-on:click="randomShrub(), vueResetShrub(), resetLi()">SURPRISE ME!</div>
+          </div>
+          </div>
+        </div>
+
+
+        <div class="container" id="quiz">
+            <div id="background" v-bind:style="{ backgroundImage: 'url(' + this.backImg + ')' }"></div>
+            <div class="row justify-content-center">
+                <div class="container" id="leftIcons">
+                    <div class="icon" id="resetQuiz" v-on:click="vueResetShrub(), resetLi()"><h3>RESET QUIZ</h3></div>
+                    <div class="icon" id="newRandom" v-on:click="vueRandomShrub(), vueResetShrub(), resetLi()"><h3>NEW RANDOM</h3></div>
+                </div>
+                <div class="col">
+                <h1>SHRUB IDENTIFICATION</h1>
+                </div>
+                <div class="container" id="rightIcons">
+                    <div class="icon" id="selectNew" v-on:click="vueResetShrub(), resetLi()"><h3>SELECT NEW</h3></div>
+                    <div class="icon" id="fieldGuide"><h3>FIELD GUIDE</h3></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col" id="imgCol">
+                    <img :src="speciesImage" id="speciesImg">
+                </div>
+                <div class="col">
+                    <div class="row justify-content-center" id="dropdown">
+                        <h2>I KNOW THE ANSWER!</h2>
+                    </div>
+                    <div id="list" class="col">
+                        <ul>
+                            <li id="hide">- - - - - - - HIDE LIST - - - - - - -</li>
+                            <li id="li2" v-on:click="chooseLi2(), checkAnswer()">&nbsp;BEARBERRY</li>
+                            <li id="li4" v-on:click="chooseLi4(), checkAnswer()">&nbsp;BLUEBERRY</li>
+                            <li id="li14" v-on:click="chooseLi14(), checkAnswer()">&nbsp;CINQUEFOIL</li>
+                            <li id="li5" v-on:click="chooseLi5(), checkAnswer()">&nbsp;CURRANT</li>
+                            <li id="li12" v-on:click="chooseLi12(), checkAnswer()">&nbsp;DOGWOOD</li>
+                            <li id="li3" v-on:click="chooseLi3(), checkAnswer()">&nbsp;ELDERBERRY</li>
+                            <li id="li8" v-on:click="chooseLi8(), checkAnswer()">&nbsp;LILAC</li>
+                            <li id="li9" v-on:click="chooseLi9(), checkAnswer()">&nbsp;OREGON GRAPE</li>
+                            <li id="li16" v-on:click="chooseLi16(), checkAnswer()">&nbsp;POISON OAK</li>
+                            <li id="li15" v-on:click="chooseLi15(), checkAnswer()">&nbsp;PRAIRIE ROSE</li>
+                            <li id="li18" v-on:click="chooseLi18(), checkAnswer()">&nbsp;PRICKLY PEAR</li>
+                            <li id="li7" v-on:click="chooseLi7(), checkAnswer()">&nbsp;PUSSY WILLOW</li>
+                            <li id="li13" v-on:click="chooseLi13(), checkAnswer()">&nbsp;RHODODENDRON</li>
+                            <li id="li17" v-on:click="chooseLi17(), checkAnswer()">&nbsp;SAGEBRUSH</li>
+                            <li id="li19" v-on:click="chooseLi19(), checkAnswer()">&nbsp;SAGUARO CACTUS</li>
+                            <li id="li6" v-on:click="chooseLi6(), checkAnswer()">&nbsp;SERVICEBERRY</li>
+                            <li id="li10" v-on:click="chooseLi10(), checkAnswer()">&nbsp;SPIREA</li>
+                            <li id="li11" v-on:click="chooseLi11(), checkAnswer()">&nbsp;VIBURNUM</li>
+                            <li id="li1" v-on:click="chooseLi1(), checkAnswer()">&nbsp;WINTERBERRY</li>
+                        </ul>
+                      </div>
+                    <div class="row" id="speciesDescript">
+                        <p id="speciesDescriptText">
+                            A plant,
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                <div class="container" id="questionContainer">
+                    <p id="questionText">
+                        {{ this.question }}
+                    </p>
+                </div>
+                <div class="row justify-content-center" id="answerRow">
+                    <div class="container" id="answerA" v-on:click="buttonA(), vueUpdateQuestion(), checkAnswer()">
+                        <p id="answerAText">{{ this.answerA }}</p>
+                    </div>
+                    <div class="container" id="answerB" v-on:click="buttonB(), vueUpdateQuestion(), checkAnswer()">
+                        <p id="answerBText">{{ this.answerB }}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="results">
+            <div id="background"></div>
+            <div class="row justify-content-center">
+                <div class="col">
+                <h1>SHRUB IDENTIFICATION</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container" id="resultsHeader">
+                    <h4 id="quizResult">{{ quizResult }}</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonLeft">
+                            <h5 id="resultsRandom" v-on:click="vueRandomShrub(), resetLi()">NEW<br>RANDOM</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonLeft">
+                            <h5 id="resultsNew" v-on:click="vueUpdateQuestion(), vueResetShrub(), shrubMenuSelect()">SELECT<br>PLANT</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img :src="speciesImage" id="resultsImg">
+                </div>
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonRight">
+                            <h5 id="buttons">FIELD<br>GUIDE</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonRight">
+                            <a href="./index.html"><h5>CATEGORY SELECT</h5></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container" id="resultsTextContainer">
+                    <p id="quizResultsText"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+  </body>
+</html>

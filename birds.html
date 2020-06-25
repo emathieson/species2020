@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>DICHOTOMOUS IDENTIFICATION</title>
+
+    <!-- JQuery scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- JS scripts-->
+    <script src="./movement.js" defer></script>
+
+    <!--Vue Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="./js/birdApp.js" defer></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./birds.css" type="text/css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+      <div class="navbar">
+        <div><a href="./index.html"><h6 id="navCat">CATEGORIES</h6></a></div>
+        <div>
+            <h6>ABOUT</h6>
+            <h6>HELP</h6>
+        </div>
+      </div>
+      <div id="birdApp">
+
+        <div id="sizeWarning">
+            <div class="row justify-content-center" id="hello">
+                <h1>Hello! :)</h1>
+            </div>
+            <div class="row justify-content-center" id="warning">
+                <h1>Please either make your browser larger or view on a mobile device to use this web app.</h1>
+            </div>
+            <div class="row justify-content-center" id="warning">
+                <h1>Thanks! -EM</h1>
+            </div>
+        </div>
+
+      <div class="container" id="main">
+          <div class="row justify-content-center">
+              <h1>AVIAN IDENTIFICATION</h1>
+          </div>
+          <div class="row justify-content-center">
+            <p id="catInstruct">
+                Please select a bird below:
+            </p>
+          </div>
+          
+          <div class="container" id="selectMenu">
+              <div class="row justify-content-center">
+                  <div class="option" id="bluebird" v-on:click="setB14(), resetBird()"></div>
+                  <div class="option" id="bluejay" v-on:click="setB13(), resetBird()"></div>
+                  <div class="option" id="canadiangoose" v-on:click="setB20(), resetBird()"></div>
+                  <div class="option" id="chickadee" v-on:click="setB23(), resetBird()"></div>
+                  <div class="option" id="eagle" v-on:click="setB3(), resetBird()"></div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="option" id="egret" v-on:click="setB12(), resetBird()"></div>
+                <div class="option" id="falcon" v-on:click="setB5(), resetBird()"></div>
+                <div class="option" id="grouse" v-on:click="setB22(), resetBird()"></div>
+                <div class="option" id="hawk"v-on:click="setB6(), resetBird()"></div>
+                <div class="option" id="heron" v-on:click="setB10(), resetBird()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="hummingbird" v-on:click="setB17(), resetBird()"></div>
+                <div class="option" id="loon" v-on:click="setB8(), resetBird()"></div>
+                <div class="option" id="mallard" v-on:click="setB9(), resetBird()"></div>
+                <div class="option" id="nuthatch" v-on:click="setB16(), resetBird()"></div>
+                <div class="option" id="owl" v-on:click="setB2(), resetBird()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="pelican" v-on:click="setB7(), resetBird()"></div>
+                <div class="option" id="pigeon" v-on:click="setB25(), resetBird()"></div>
+                <div class="option" id="roadrunner" v-on:click="setB1(), resetBird()"></div>
+                <div class="option" id="robin" v-on:click="setB24(), resetBird()"></div>
+                <div class="option" id="sparrow" v-on:click="setB21(), resetBird()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="swallow" v-on:click="setB15(), resetBird()"></div>
+                <div class="option" id="swan" v-on:click="setB11(), resetBird()"></div>
+                <div class="option" id="vulture" v-on:click="setB4(), resetBird()"></div>
+                <div class="option" id="warbler" v-on:click="setB18(), resetBird()"></div>
+                <div class="option" id="woodpecker" v-on:click="setB19(), resetBird()"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="option" id="random" v-on:click="randomBird(), vueResetBird(), resetLi()">SURPRISE ME!</div>
+          </div>
+          </div>
+        </div>
+
+
+        <div class="container" id="quiz">
+            <div id="background" v-bind:style="{ backgroundImage: 'url(' + this.backImg + ')' }"></div>
+            <div class="row justify-content-center">
+                <div class="container" id="leftIcons">
+                    <div class="icon" id="resetQuiz" v-on:click="vueResetBird(), resetLi()"><h3>RESET QUIZ</h3></div>
+                    <div class="icon" id="newRandom" v-on:click="vueRandomBird(), vueResetBird(), resetLi()"><h3>NEW RANDOM</h3></div>
+                </div>
+                <div class="col">
+                <h1>AVIAN IDENTIFICATION</h1>
+                </div>
+                <div class="container" id="rightIcons">
+                    <div class="icon" id="selectNew" v-on:click="vueResetBird(), resetLi()"><h3>SELECT NEW</h3></div>
+                    <div class="icon" id="fieldGuide"><h3>FIELD GUIDE</h3></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col" id="imgCol">
+                    <img :src="speciesImage" id="speciesImg">
+                </div>
+                <div class="col">
+                    <div class="row justify-content-center" id="dropdown">
+                        <h2>I KNOW THE ANSWER!</h2>
+                    </div>
+                    <div id="list" class="col">
+                        <ul>
+                            <li id="hide">- - - - - - - HIDE LIST - - - - - - -</li>
+                          <li id="li14" v-on:click="chooseLi14(), checkAnswer()">&nbsp;BLUEBIRD</li>
+                          <li id="li13" v-on:click="chooseLi13(), checkAnswer()">&nbsp;BLUE JAY</li>
+                          <li id="li20" v-on:click="chooseLi20(), checkAnswer()">&nbsp;CANADIAN GOOSE</li>
+                          <li id="li23" v-on:click="chooseLi23(), checkAnswer()">&nbsp;CHICKADEE</li>
+                          <li id="li3" v-on:click="chooseLi3(), checkAnswer()">&nbsp;EAGLE</li>
+                          <li id="li12" v-on:click="chooseLi12(), checkAnswer()">&nbsp;EGRET</li>
+                          <li id="li5" v-on:click="chooseLi5(), checkAnswer()">&nbsp;FALCON</li>
+                          <li id="li22" v-on:click="chooseLi22(), checkAnswer()">&nbsp;GROUSE</li>
+                          <li id="li6" v-on:click="chooseLi6(), checkAnswer()">&nbsp;HAWK</li>
+                          <li id="li10" v-on:click="chooseLi10(), checkAnswer()">&nbsp;GREAT BLUE HERON</li>
+                          <li id="li17" v-on:click="chooseLi17(), checkAnswer()">&nbsp;HUMMINGBIRD</li>
+                          <li id="li8" v-on:click="chooseLi8(), checkAnswer()">&nbsp;LOON</li>
+                          <li id="li9" v-on:click="chooseLi9(), checkAnswer()">&nbsp;MALLARD DUCK</li>
+                          <li id="li16" v-on:click="chooseLi16(), checkAnswer()">&nbsp;NUTHATCH</li>
+                          <li id="li2" v-on:click="chooseLi2(), checkAnswer()">&nbsp;OWL</li>
+                          <li id="li7" v-on:click="chooseLi7(), checkAnswer()">&nbsp;PELICAN</li>
+                          <li id="li25" v-on:click="chooseLi25(), checkAnswer()">&nbsp;PIGEON</li>
+                          <li id="li1" v-on:click="chooseLi1(), checkAnswer()">&nbsp;ROADRUNNER</li>
+                          <li id="li24" v-on:click="chooseLi24(), checkAnswer()">&nbsp;ROBIN</li>
+                          <li id="li21" v-on:click="chooseLi21(), checkAnswer()">&nbsp;SPARROW</li>
+                          <li id="li15" v-on:click="chooseLi15(), checkAnswer()">&nbsp;SWALLOW</li>
+                          <li id="li11" v-on:click="chooseLi11(), checkAnswer()">&nbsp;SWAN</li>
+                          <li id="li4" v-on:click="chooseLi4(), checkAnswer()">&nbsp;VULTURE</li>
+                          <li id="li18" v-on:click="chooseLi18(), checkAnswer()">&nbsp;WARBLER</li>
+                          <li id="li19" v-on:click="chooseLi19(), checkAnswer()">&nbsp;WOODPECKER</li>
+                        </ul>
+                      </div>
+                    <div class="row" id="speciesDescript">
+                        <p id="speciesDescriptText">
+                            A bird,
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                <div class="container" id="questionContainer">
+                    <p id="questionText">
+                        {{ this.question }}
+                    </p>
+                </div>
+                <div class="row justify-content-center" id="answerRow">
+                    <div class="container" id="answerA" v-on:click="buttonA(), vueUpdateQuestion(), checkAnswer()">
+                        <p id="answerAText">{{ this.answerA }}</p>
+                    </div>
+                    <div class="container" id="answerB" v-on:click="buttonB(), vueUpdateQuestion(), checkAnswer()">
+                        <p id="answerBText">{{ this.answerB }}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="results">
+            <div id="background"></div>
+            <div class="row justify-content-center">
+                <div class="col">
+                <h1>AVIAN IDENTIFICATION</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container" id="resultsHeader">
+                    <h4 id="quizResult">{{ quizResult }}</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonLeft">
+                            <h5 id="resultsRandom" v-on:click="vueRandomBird(), resetLi()">NEW<br>RANDOM</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonLeft">
+                            <h5 id="resultsNew" v-on:click="vueUpdateQuestion(), vueResetBird(), birdMenuSelect()">SELECT<br>BIRD</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img :src="speciesImage" id="resultsImg">
+                </div>
+                <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonRight">
+                            <h5 id="buttons">FIELD<br>GUIDE</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="resultsButtonRight">
+                            <a href="./index.html"><h5>CATEGORY SELECT</h5></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="container" id="resultsTextContainer">
+                    <p id="quizResultsText"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+  </body>
+</html>
