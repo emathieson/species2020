@@ -7,18 +7,22 @@ body {
     display: none;
 }
 
+#oops {
+    overflow-x: hidden;
+}
+
 a:hover {
     text-decoration: none;
 }
 
 .navbar {
     background-color: #272727;
-    color: #5e5e5e;
     padding: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 h6 {
+    color: #5e5e5e;
     font-size: 18px;
     letter-spacing: 2px;
     display: inline-block;
