@@ -84,7 +84,6 @@ h1 {
     margin: 8px;
     margin-top: 4px;
     transition: all 0.3s ease;
-    
 }
 .option:hover {
     cursor: pointer;
@@ -475,6 +474,10 @@ h1 {
 body {
     overflow: hidden;
 }
+
+
+
+
 #sizeWarning {
     display: block;
     position: absolute;

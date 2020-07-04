@@ -143,6 +143,11 @@ h1 {
     body {
         overflow: hidden;
     }
+
+    #main {
+        display: none;
+    }
+    
     #sizeWarning {
         display: block;
         position: absolute;
@@ -161,8 +166,8 @@ h1 {
         margin-top: 10vh;
     }
     #warning {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
         letter-spacing: 1px;
         min-width: 200px;
         font-size: 20px;

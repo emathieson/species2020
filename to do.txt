@@ -1,0 +1,40 @@
+hawk picture needs a dark neck
+
+warbler picture needs red on head
+
+snake pictures with and without rattles
+
+treefrog needs pictures with suction toes
+
+porcupine needs tail shown
+
+grizzly bear needs tail shown
+black bear needs tail shown
+
+bobcat sideburns
+
+wolf with darker tail
+
+weasel needs tail shown
+
+deer pictures needs longer tail
+
+iris singular flower
+
+violet needs yellow pistil and singular
+
+geranium needs singular and pink pistil
+
+darker blue blueberries
+
+oregon grape showing flowers along branch
+
+spirea flowers along branch
+
+serviceberry needs toothed leaf
+
+make about link function
+make help link function
+make mobile version
+make field guide! ahhh
+add a loading screen with interval so images dont pop, they are just there once the interval is over
